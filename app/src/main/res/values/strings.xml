@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DataControllerDemo</string>
+    <string name="any_text_on_shared">If there is something written in SharedPreferences with the key "text_example" it is written in the EditText below</string>
+    <string name="save_text">Save text</string>
+    <string name="drop_all_content">Drop all content</string>
+</resources>
