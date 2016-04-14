@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DataControllerDemo.iml" filepath="$PROJECT_DIR$/DataControllerDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataControllerDemo.iml" filepath="$PROJECT_DIR$/DataControllerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datacontroller/datacontroller.iml" filepath="$PROJECT_DIR$/datacontroller/datacontroller.iml" />
       <module fileurl="file://$PROJECT_DIR$/datacontroller/datacontroller.iml" filepath="$PROJECT_DIR$/datacontroller/datacontroller.iml" />
     </modules>
   </component>
