@@ -19,25 +19,39 @@ public class DataController {
         editor = sharedPref.edit();
     }
 
-    public void saveData(String key, String value) {
+    /** Write methods */
+
+    public void writeData(String key, String value) {
         editor.putString(key, value);
-        editor.commit();
+        commit();
     }
 
-    public void saveData(String key, int value) {
+    public void writeData(String key, int value) {
         editor.putInt(key, value);
-        editor.commit();
+        commit();
     }
 
-    public void saveData(String key, boolean value) {
+    public void writeData(String key, boolean value) {
         editor.putBoolean(key, value);
-        editor.commit();
+        commit();
     }
 
-    public void saveData(String key, Set<String> value) {
+    public void writeData(String key, Set<String> value) {
         editor.putStringSet(key, value);
-        editor.commit();
+        commit();
     }
+
+    public void writeData(String key, long value) {
+        editor.putLong(key, value);
+        commit();
+    }
+
+    public void writeData(String key, float value) {
+        editor.putFloat(key, value);
+        commit();
+    }
+
+    /** Read methods */
 
     public String readStringData(String key) {
         String defaultValue = null;
@@ -59,8 +73,24 @@ public class DataController {
         return sharedPref.getBoolean(key, defaultValue);
     }
 
+    public long readLong(String key) {
+        long defaultValue = 0;
+        return sharedPref.getLong(key, defaultValue);
+    }
+
+    public float readFloat(String key) {
+        float defaultValue = 0;
+        return sharedPref.getFloat(key, defaultValue);
+    }
+
+    /** Others methods */
+
     public void dropAllDatas(){
         editor.clear();
+        commit();
+    }
+
+    private void commit() {
         editor.commit();
     }
 

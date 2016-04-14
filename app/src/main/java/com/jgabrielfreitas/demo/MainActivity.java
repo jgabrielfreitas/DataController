@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         String textInEditText = writeSomethingEditText.getText().toString();
 
         if (!TextUtils.isEmpty(textInEditText)) {
-            dataController.saveData(TEXT_EXAMPLE_KEY, textInEditText);
+            dataController.writeData(TEXT_EXAMPLE_KEY, textInEditText);
             showToast("Text saved!");
         } else
             showToast("Nothing to save :(");
