@@ -7,6 +7,7 @@ Easy way to work with `SharedPreferences` with a simple layer.
 
 1 Add the JitPack repository to your build file
 
+
 ```gradle
 allprojects {
 		repositories {
@@ -16,6 +17,7 @@ allprojects {
 } ```
 
 2 Add the dependency
+
 
 ```gradle
 dependencies {
