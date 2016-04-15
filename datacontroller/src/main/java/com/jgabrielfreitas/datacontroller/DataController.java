@@ -83,6 +83,11 @@ public class DataController {
         return sharedPref.getFloat(key, defaultValue);
     }
 
+    public void remove(String key) {
+        editor.remove(key);
+        commit();
+    }
+
     /** Others methods */
 
     public void dropAllDatas(){
