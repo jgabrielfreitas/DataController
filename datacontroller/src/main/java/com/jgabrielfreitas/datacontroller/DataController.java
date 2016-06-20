@@ -15,8 +15,11 @@ public class DataController {
     SharedPreferences.Editor editor;
 
     public DataController(Context context) {
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
-        editor = sharedPref.edit();
+        if (context != null) {
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+            editor = sharedPref.edit();
+        }
+
     }
 
     /** Write methods */
