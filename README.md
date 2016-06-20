@@ -22,7 +22,7 @@ allprojects {
 
 ```gradle
 dependencies {
-	        compile 'com.github.jgabrielfreitas:DataControllerDemo:1.0.0'
+	        compile 'com.github.jgabrielfreitas:DataController:1.1.0'
 }
 ```
 
