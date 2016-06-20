@@ -51,6 +51,12 @@ public class DataController {
         commit();
     }
 
+    /** Supports of type double values */
+    public void writeData(String key, double value) {
+        editor.putLong(key, Double.doubleToRawLongBits(value));
+        commit();
+    }
+
     /** Read methods */
 
     public String readStringData(String key) {
@@ -81,6 +87,11 @@ public class DataController {
     public float readFloat(String key) {
         float defaultValue = 0;
         return sharedPref.getFloat(key, defaultValue);
+    }
+
+    public double readDouble(String key) {
+        long defaultValue = 0;
+        return Double.longBitsToDouble(sharedPref.getLong(key, Double.doubleToLongBits(defaultValue)));
     }
 
     public void remove(String key) {
