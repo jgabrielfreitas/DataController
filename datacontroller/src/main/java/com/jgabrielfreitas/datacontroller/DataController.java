@@ -106,7 +106,6 @@ public class DataController {
     }
 
     /** Others methods */
-
     public void dropAllDatas(){
         editor.clear();
         save();
