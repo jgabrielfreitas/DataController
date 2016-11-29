@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -107,6 +109,22 @@ public class DataController {
 
     public void dropAllDatas(){
         editor.clear();
+        save();
+    }
+
+    /**
+     * Drop all keys except those ones entered as param
+     *
+     * @param keysToKeep the keys you want to maintain
+     */
+    public void dropAllBut(List<String> keysToKeep) {
+        Map<String, ?> prefs = sharedPref.getAll();
+        for (Map.Entry<String, ?> prefToReset : prefs.entrySet()) {
+            String key = prefToReset.getKey();
+            if (!keysToKeep.contains(key)) {
+                editor.remove(key);
+            }
+        }
         save();
     }
 
