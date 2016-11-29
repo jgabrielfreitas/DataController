@@ -2,6 +2,7 @@ package com.jgabrielfreitas.datacontroller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 import java.util.Set;
@@ -26,38 +27,38 @@ public class DataController {
 
     public void writeData(String key, String value) {
         editor.putString(key, value);
-        commit();
+        save();
     }
 
     public void writeData(String key, int value) {
         editor.putInt(key, value);
-        commit();
+        save();
     }
 
     public void writeData(String key, boolean value) {
         editor.putBoolean(key, value);
-        commit();
+        save();
     }
 
     public void writeData(String key, Set<String> value) {
         editor.putStringSet(key, value);
-        commit();
+        save();
     }
 
     public void writeData(String key, long value) {
         editor.putLong(key, value);
-        commit();
+        save();
     }
 
     public void writeData(String key, float value) {
         editor.putFloat(key, value);
-        commit();
+        save();
     }
 
     /** Supports of type double values */
     public void writeData(String key, double value) {
         editor.putLong(key, Double.doubleToRawLongBits(value));
-        commit();
+        save();
     }
 
     /** Read methods */
@@ -99,18 +100,22 @@ public class DataController {
 
     public void remove(String key) {
         editor.remove(key);
-        commit();
+        save();
     }
 
     /** Others methods */
 
     public void dropAllDatas(){
         editor.clear();
-        commit();
+        save();
     }
 
-    private void commit() {
-        editor.commit();
+    private void save() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.GINGERBREAD) {
+            editor.commit();
+        } else {
+            editor.apply();
+        }
     }
 
 }
