@@ -17,10 +17,20 @@ public class DataController {
 
     private SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
+
+    //Secure way
     public DataController(Context context, boolean secure) {
         if (context != null) {
             sharedPref = secure ? new SecurePreferences(context.getApplicationContext()) :
                     PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+            editor = sharedPref.edit();
+        }
+
+    }
+    //Normal controller
+    public DataController(Context context) {
+        if (context != null) {
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
             editor = sharedPref.edit();
         }
 
