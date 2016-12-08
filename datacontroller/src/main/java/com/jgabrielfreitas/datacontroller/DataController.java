@@ -1,9 +1,10 @@
 package com.jgabrielfreitas.datacontroller;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
+
+import com.securepreferences.SecurePreferences;
 
 import java.util.List;
 import java.util.Map;
@@ -14,12 +15,12 @@ import java.util.Set;
  */
 public class DataController {
 
-    private SharedPreferences sharedPref;
-    SharedPreferences.Editor editor;
+    private SecurePreferences sharedPref;
+    SecurePreferences.Editor editor;
 
     public DataController(Context context) {
         if (context != null) {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+            sharedPref = new SecurePreferences(context.getApplicationContext());
             editor = sharedPref.edit();
         }
 
