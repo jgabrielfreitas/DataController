@@ -2,10 +2,7 @@ package com.jgabrielfreitas.datacontroller;
 
 import android.content.Context;
 import android.os.Build;
-import android.preference.PreferenceManager;
-
 import com.securepreferences.SecurePreferences;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -118,7 +115,9 @@ public class DataController {
      * @param keysToKeep the keys you want to maintain
      */
     public void dropAllBut(List<String> keysToKeep) {
+
         Map<String, ?> prefs = sharedPref.getAll();
+
         for (Map.Entry<String, ?> prefToReset : prefs.entrySet()) {
             String key = prefToReset.getKey();
             if (!keysToKeep.contains(key)) {
